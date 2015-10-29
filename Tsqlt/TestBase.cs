@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Tsqlt
 {
     public class TestBase
     {
-        public static void SetupTestFixture()
+        public static void SetupTestFixture(string connectionString, string embeddedResourcePrefix, Assembly testAssembly)
         {
+            BootstrapForTests.ConnectionString = connectionString;
+            BootstrapForTests.EmbeddedResourcePrefix = embeddedResourcePrefix;
+            BootstrapForTests.TestAssembly = testAssembly;
             BootstrapForTests.BootstrapTestsDatabase();
         }
 

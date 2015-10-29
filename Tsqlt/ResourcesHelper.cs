@@ -8,33 +8,27 @@ namespace Tsqlt
 {
     public class ResourcesHelper
     {
-        public string GetEmbeddedResource(string ns, string res)
+        public string GetEmbeddedResource(Assembly assembly, string ns, string res)
         {
             var fullyQualifiedResourceName = $"{ns}.{res}";
-            return GetEmbeddedResource(fullyQualifiedResourceName);
+            return GetEmbeddedResource(assembly, fullyQualifiedResourceName);
         }
 
-        private string GetEmbeddedResource(string fullyQualifiedResourceName)
+        private string GetEmbeddedResource(Assembly assembly, string fullyQualifiedResourceName)
         {
-            var executingAssembly = Assembly.GetExecutingAssembly();
-            var stream = executingAssembly.GetManifestResourceStream(fullyQualifiedResourceName);
-            if (stream == null) throw new Exception($"Could not located the resource at {fullyQualifiedResourceName}");
+            var stream = assembly.GetManifestResourceStream(fullyQualifiedResourceName);
+            if (stream == null) throw new Exception($"Could not locate the resource at {fullyQualifiedResourceName}");
             using (var reader = new StreamReader(stream))
             {
                 return reader.ReadToEnd();
             }
         }
-
-        public IEnumerable<string> GetAllEmbeddedResourcesInAssembly()
-        {
-            return GetType().Assembly.GetManifestResourceNames();
-        }
-
-        public IEnumerable<string> GetEmbeddedResourceScriptsFrom(IEnumerable<string> fullyQualifiedResourceNames)
+        
+        public IEnumerable<string> GetEmbeddedResourceScriptsFrom(Assembly assembly, IEnumerable<string> fullyQualifiedResourceNames)
         {
             var resourceScripts = new List<string>();
             if (fullyQualifiedResourceNames == null) return resourceScripts;
-            resourceScripts.AddRange(fullyQualifiedResourceNames.Select(GetEmbeddedResource));
+            resourceScripts.AddRange(fullyQualifiedResourceNames.Select(n => GetEmbeddedResource(assembly, n)));
 
             return resourceScripts;
         }

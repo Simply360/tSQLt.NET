@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestBootstrapForTests.cs" />
+    <Compile Include="BootstrapForTests.cs" />
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="MstestTsqltTestRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,7 +59,7 @@
     <Compile Include="TsqltTestUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tSQLt.class.sql" />
+    <EmbeddedResource Include="tSQLt.class.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

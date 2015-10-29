@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace Tsqlt
@@ -45,7 +46,7 @@ namespace Tsqlt
         public static void InstallTsqlt(string connectionString)
         {
             var resourcesHelper = new ResourcesHelper();
-            var sql = resourcesHelper.GetEmbeddedResource("Tsqlt", "tSQLt.class.sql");
+            var sql = resourcesHelper.GetEmbeddedResource(Assembly.GetExecutingAssembly(), "Tsqlt", "tSQLt.class.sql");
             ExecuteNonQuerySmo(sql, connectionString);
         }
 
