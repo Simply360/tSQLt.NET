@@ -33,6 +33,8 @@ namespace Tsqlt
 
             using (var sqlConnection = new SqlConnection(connectionString))
             {
+                sqlConnection.Open();
+
                 foreach (var testClass in testClasses)
                 {
                     _testClassInstaller.Install(testClass, sqlConnection);

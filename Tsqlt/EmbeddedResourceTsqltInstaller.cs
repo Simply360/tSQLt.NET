@@ -23,6 +23,8 @@ namespace Tsqlt
 
             using (var connection = new SqlConnection(connectionString))
             {
+                connection.Open();
+
                 foreach (var batch in batches)
                 {
                     using (var cmd = new SqlCommand(batch, connection))
