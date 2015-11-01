@@ -53,7 +53,6 @@ namespace Tsqlt
 
             using (var command = new SqlCommand(commandText, connection))
             {
-                command.Parameters.Add(new SqlParameter(testClassName, SqlDbType.NVarChar, 256));
                 command.ExecuteNonQuery();
             }
         }
