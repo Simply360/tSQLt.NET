@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tsqlt", "Tsqlt\Tsqlt.csproj", "{4C16E069-CC58-435D-A8B5-17ACDC4A4DED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tsqlt.Tests", "Tsqlt.Tests\Tsqlt.Tests.csproj", "{B98792B1-0BCA-4D52-AF1B-91337BA521E9}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FC2567A-FF56-4BDF-A924-2479126B493F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -20,6 +22,10 @@ Global
 		{4C16E069-CC58-435D-A8B5-17ACDC4A4DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C16E069-CC58-435D-A8B5-17ACDC4A4DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C16E069-CC58-435D-A8B5-17ACDC4A4DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B98792B1-0BCA-4D52-AF1B-91337BA521E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98792B1-0BCA-4D52-AF1B-91337BA521E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98792B1-0BCA-4D52-AF1B-91337BA521E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98792B1-0BCA-4D52-AF1B-91337BA521E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
