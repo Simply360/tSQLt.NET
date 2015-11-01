@@ -2,12 +2,13 @@
 {
     public class TsqltTest : ITsqltTest
     {
-        public string Name { get; }
+        public string ProcedureName { get; }
+        public string NormalizedTestMethodName => ProcedureName.Replace(" ", "_").Replace("-", "_");
         public string TestCaseBody { get; }
 
-        public TsqltTest(string name, string testCaseBody)
+        public TsqltTest(string procedureName, string testCaseBody)
         {
-            Name = name;
+            ProcedureName = procedureName;
             TestCaseBody = testCaseBody;
         }
     }

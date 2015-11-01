@@ -2,7 +2,9 @@
 {
     public interface ITsqltTest
     {
-        string Name { get; }
+        string ProcedureName { get; }
+
+        string NormalizedTestMethodName { get; }
 
         string TestCaseBody { get; }
     }

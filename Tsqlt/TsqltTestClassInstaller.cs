@@ -22,7 +22,7 @@ namespace Tsqlt
 
             foreach (var test in testClass.Tests)
             {
-                CreateTest(testClass.TestClassName, test.Name, test.TestCaseBody, connection);
+                CreateTest(testClass.TestClassName, test.ProcedureName, test.TestCaseBody, connection);
             }
         }
 
