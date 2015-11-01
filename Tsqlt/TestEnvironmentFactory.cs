@@ -13,7 +13,8 @@ namespace Tsqlt
             var testClassInstaller = new TsqltTestClassInstaller(embeddedTextResourceReader);
             var testClassDiscoverer = new AssemblyResourceTestClassDiscoverer(testAssembly, testResourcePath, embeddedTextResourceReader);
             var bootstrapper = new TestEnvironmentBootstrapper(tsqltInstaller, dbMigrator ?? new DefaultDbMigrator(), testClassDiscoverer, testClassInstaller);
-            var sqlTestExecutor = new SqlTestExecutor();
+            var outputMessageWriter = new DebugTestOutputMessageWriter();
+            var sqlTestExecutor = new MessageWritingSqlTestExecutor(outputMessageWriter, new SqlTestExecutor());
             return new BootstrappedTestEnvironment(connectionString, bootstrapper, sqlTestExecutor);
         }
     }
