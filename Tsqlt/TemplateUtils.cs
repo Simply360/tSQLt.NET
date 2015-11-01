@@ -7,10 +7,10 @@ namespace Tsqlt
 {
     public class TemplateUtils
     {
-        public static List<TsqltTest> GetTests(string connectionString)
+        public static List<OldTsqltTest> GetTests(string connectionString)
         {
             const string sql = "SELECT schemaid, testclassname, objectid, name FROM tSQLt.Tests ORDER BY TestClassName , Name ASC";
-            var tests = new List<TsqltTest>();
+            var tests = new List<OldTsqltTest>();
             using (var sqlConnection = new SqlConnection(connectionString))
             {
                 sqlConnection.Open();
@@ -20,7 +20,7 @@ namespace Tsqlt
                     {
                         while (reader.Read())
                         {
-                            tests.Add(new TsqltTest(
+                            tests.Add(new OldTsqltTest(
                                 reader.GetInt32(reader.GetOrdinal("SchemaId")),
                                 reader.GetString(reader.GetOrdinal("TestClassName")),
                                 reader.GetInt32(reader.GetOrdinal("ObjectId")),

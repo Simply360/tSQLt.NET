@@ -47,6 +47,8 @@
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
+    <Compile Include="ITsqltTest.cs" />
+    <Compile Include="ITsqltTestClass.cs" />
     <Compile Include="SqlBatchExtractor.cs" />
     <Compile Include="TestBootstrapForTests.cs" />
     <Compile Include="BootstrapForTests.cs" />
@@ -59,7 +61,9 @@
     <Compile Include="TestBase.cs" />
     <Compile Include="TestDbBootstrapper.cs" />
     <Compile Include="TestResult.cs" />
+    <Compile Include="OldTsqltTest.cs" />
     <Compile Include="TsqltTest.cs" />
+    <Compile Include="TsqltTestClass.cs" />
     <Compile Include="TsqltTestUtils.cs" />
   </ItemGroup>
   <ItemGroup>

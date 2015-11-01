@@ -27,7 +27,7 @@ namespace Tsqlt
 
         // ReSharper disable UnusedMember.Global
         // This is used by the templates
-        public static List<TsqltTest> GetTests()
+        public static List<OldTsqltTest> GetTests()
         // ReSharper restore UnusedMember.Global
         {
             try
@@ -38,7 +38,7 @@ namespace Tsqlt
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return new List<TsqltTest>();
+                return new List<OldTsqltTest>();
             }
         }
     }
