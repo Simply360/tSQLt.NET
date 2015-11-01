@@ -48,12 +48,14 @@
     <Compile Include="ConsoleTestOutputMessageWriter.cs" />
     <Compile Include="DebugTestOutputMessageWriter.cs" />
     <Compile Include="DefaultDbMigrator.cs" />
+    <Compile Include="EmbeddedResourceTsqltInstaller.cs" />
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
     <Compile Include="ITestClassDiscoverer.cs" />
     <Compile Include="ITestOutputMessageWriter.cs" />
     <Compile Include="ISqlTestExecutor.cs" />
+    <Compile Include="ITsqltInstaller.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
     <Compile Include="ITsqltTestClassInstaller.cs" />
