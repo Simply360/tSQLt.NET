@@ -48,3 +48,5 @@ Temporary Items
 # Build
 bin
 obj
+packages/
+TestResults/
