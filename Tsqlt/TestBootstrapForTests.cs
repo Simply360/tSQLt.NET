@@ -3,6 +3,7 @@
 namespace Tsqlt
 {
     [TestClass]
+    [Ignore]
     public class TestBootstrapForTests
     {
         [TestMethod]
