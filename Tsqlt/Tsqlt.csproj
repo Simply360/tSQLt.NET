@@ -73,7 +73,7 @@
     <Compile Include="SqlHelper.cs" />
     <Compile Include="TemplateUtils.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="TestDbBootstrapper.cs" />
+    <Compile Include="IDbMigrator.cs" />
     <Compile Include="TestResult.cs" />
     <Compile Include="OldTsqltTest.cs" />
     <Compile Include="TsqltTest.cs" />
