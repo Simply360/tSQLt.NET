@@ -49,9 +49,11 @@
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
     <Compile Include="ITestClassDiscoverer.cs" />
+    <Compile Include="ISqlTestExecutor.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
     <Compile Include="SqlBatchExtractor.cs" />
+    <Compile Include="SqlTestExecutor.cs" />
     <Compile Include="TestBootstrapForTests.cs" />
     <Compile Include="BootstrapForTests.cs" />
     <Compile Include="DatabaseManager.cs" />
