@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyResourceTestClassDiscoverer.cs" />
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
+    <Compile Include="ITestClassDiscoverer.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
     <Compile Include="SqlBatchExtractor.cs" />

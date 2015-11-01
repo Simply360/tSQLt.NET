@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AssemblyResourceTestClassDiscovererTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +76,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fixtures\AssemblyResourceTestClassDiscoverer_notests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\AssemblyResourceTestClassDiscoverer\TestClass1\a test with spaces.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\AssemblyResourceTestClassDiscoverer\TestClass1\a test with dashes-and spaces.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\AssemblyResourceTestClassDiscoverer\TestClass2\a test with spaces.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\AssemblyResourceTestClassDiscoverer\TestClass2\a test with dashes-and spaces.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\AssemblyResourceTestClassDiscoverer\TestClass2\AnotherTest.sql" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
