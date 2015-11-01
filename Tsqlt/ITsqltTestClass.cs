@@ -2,7 +2,12 @@
 {
     public interface ITsqltTestClass
     {
-        string Name { get; }
+        string TestClassName { get; }
+        
+        /// <summary>
+        /// A name for this class that is safe to be assigned to a CLR type
+        /// </summary>
+        string NormalizedTestClassName { get; }
 
         ITsqltTest[] Tests { get; }
     }

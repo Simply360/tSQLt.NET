@@ -17,12 +17,12 @@ namespace Tsqlt
 
         public void Install(ITsqltTestClass testClass, SqlConnection connection)
         {
-            DropClass(testClass.Name, connection);
-            CreateClass(testClass.Name, connection);
+            DropClass(testClass.TestClassName, connection);
+            CreateClass(testClass.TestClassName, connection);
 
             foreach (var test in testClass.Tests)
             {
-                CreateTest(testClass.Name, test.Name, test.TestCaseBody, connection);
+                CreateTest(testClass.TestClassName, test.Name, test.TestCaseBody, connection);
             }
         }
 
