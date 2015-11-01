@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
+    <Compile Include="ISqlBatchExtractor.cs" />
+    <Compile Include="SqlBatchExtractor.cs" />
     <Compile Include="TestBootstrapForTests.cs" />
     <Compile Include="BootstrapForTests.cs" />
     <Compile Include="DatabaseManager.cs" />
