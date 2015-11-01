@@ -56,6 +56,7 @@
     <Compile Include="ISqlTestExecutor.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
+    <Compile Include="MessageWritingSqlTestExecutor.cs" />
     <Compile Include="SqlBatchExtractor.cs" />
     <Compile Include="SqlTestExecutor.cs" />
     <Compile Include="TestBootstrapForTests.cs" />

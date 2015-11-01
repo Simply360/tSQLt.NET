@@ -66,6 +66,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AssemblyResourceTestClassDiscovererTests.cs" />
+    <Compile Include="MessageWritingSqlTestExecutorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
