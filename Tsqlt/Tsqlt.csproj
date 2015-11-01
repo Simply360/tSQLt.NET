@@ -47,6 +47,7 @@
     <Compile Include="AssemblyResourceTestClassDiscoverer.cs" />
     <Compile Include="ConsoleTestOutputMessageWriter.cs" />
     <Compile Include="DebugTestOutputMessageWriter.cs" />
+    <Compile Include="DefaultDbMigrator.cs" />
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
