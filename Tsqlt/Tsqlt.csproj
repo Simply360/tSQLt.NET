@@ -50,6 +50,7 @@
     <Compile Include="DefaultDbMigrator.cs" />
     <Compile Include="EmbeddedResourceTsqltInstaller.cs" />
     <Compile Include="EmbeddedTextResourceReader.cs" />
+    <Compile Include="ITestEnvironmentBootstrapper.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
     <Compile Include="ITestClassDiscoverer.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ITsqltTestClassInstaller.cs" />
     <Compile Include="MessageWritingSqlTestExecutor.cs" />
     <Compile Include="SqlBatchExtractor.cs" />
+    <Compile Include="TestEnvironmentBootstrapper.cs" />
     <Compile Include="SqlTestExecutor.cs" />
     <Compile Include="TestBootstrapForTests.cs" />
     <Compile Include="BootstrapForTests.cs" />
