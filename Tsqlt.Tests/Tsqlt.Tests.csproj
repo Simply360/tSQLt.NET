@@ -68,7 +68,7 @@
     <Compile Include="AssemblyResourceTestClassDiscovererTests.cs" />
     <Compile Include="MessageWritingSqlTestExecutorTests.cs" />
     <Compile Include="TestUtils.cs" />
-    <Compile Include="TsqltEnvironmentTests.cs" />
+    <Compile Include="SqlTestExecutorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
