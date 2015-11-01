@@ -56,6 +56,7 @@
     <Compile Include="ISqlTestExecutor.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
+    <Compile Include="ITsqltTestClassInstaller.cs" />
     <Compile Include="MessageWritingSqlTestExecutor.cs" />
     <Compile Include="SqlBatchExtractor.cs" />
     <Compile Include="SqlTestExecutor.cs" />
@@ -73,10 +74,14 @@
     <Compile Include="OldTsqltTest.cs" />
     <Compile Include="TsqltTest.cs" />
     <Compile Include="TsqltTestClass.cs" />
+    <Compile Include="TsqltTestClassInstaller.cs" />
     <Compile Include="TsqltTestUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="tSQLt.class.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestCaseBoilerplate.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
