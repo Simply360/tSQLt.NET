@@ -21,6 +21,12 @@ namespace Tsqlt
             _embeddedTextResourceReader = embeddedTextResourceReader;
         }
 
+        public AssemblyResourceTestClassDiscoverer(Assembly testAssembly, string testsRootResourcePath)
+            : this(testAssembly, testsRootResourcePath, new EmbeddedTextResourceReader())
+        {
+            
+        }
+
         public ITsqltTestClass[] DiscoverTests()
         {
             var embeddedResources = _testAssembly.GetManifestResourceNames();
