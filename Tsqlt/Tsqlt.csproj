@@ -45,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyResourceTestClassDiscoverer.cs" />
+    <Compile Include="ConsoleTestOutputMessageWriter.cs" />
+    <Compile Include="DebugTestOutputMessageWriter.cs" />
     <Compile Include="EmbeddedTextResourceReader.cs" />
     <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="ISqlBatchExtractor.cs" />
     <Compile Include="ITestClassDiscoverer.cs" />
+    <Compile Include="ITestOutputMessageWriter.cs" />
     <Compile Include="ISqlTestExecutor.cs" />
     <Compile Include="ITsqltTest.cs" />
     <Compile Include="ITsqltTestClass.cs" />
