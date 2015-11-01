@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmbeddedTextResourceReader.cs" />
+    <Compile Include="IEmbeddedTextResourceReader.cs" />
     <Compile Include="TestBootstrapForTests.cs" />
     <Compile Include="BootstrapForTests.cs" />
     <Compile Include="DatabaseManager.cs" />
