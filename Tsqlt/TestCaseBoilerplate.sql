@@ -1,7 +1,7 @@
-﻿CREATE PROCEDURE [{{testClass}}].[test {{testName}}]
+﻿CREATE PROCEDURE [{{testClassSchemaName}}].[{{procedureName}}]
 AS
-BEGIN
-	PRINT 'Executing tSQLt test: [{{testClass}}].[test {{testName}}]';
+BEGIN;
+	PRINT 'Executing tSQLt test: [{{testClassSchemaName}}].[{{procedureName}}]';
 
 	{{testCaseBody}}
 END;

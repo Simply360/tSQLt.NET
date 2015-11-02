@@ -17,12 +17,12 @@ namespace Tsqlt
 
         public void Install(ITsqltTestClass testClass, SqlConnection connection)
         {
-            DropClass(testClass.TestClassName, connection);
-            CreateClass(testClass.TestClassName, connection);
+            DropClass(testClass.TestClassSchemaName, connection);
+            CreateClass(testClass.TestClassSchemaName, connection);
 
             foreach (var test in testClass.Tests)
             {
-                CreateTest(testClass.TestClassName, test.ProcedureName, test.TestCaseBody, connection);
+                CreateTest(testClass.TestClassSchemaName, test.ProcedureName, test.TestCaseBody, connection);
             }
         }
 
@@ -44,11 +44,11 @@ namespace Tsqlt
             }
         }
 
-        protected virtual void CreateTest(string testClassName, string testName, string testCaseBody, SqlConnection connection)
+        protected virtual void CreateTest(string testClassSchemaName, string procedureName, string testCaseBody, SqlConnection connection)
         {
             var commandText = TestCaseBoilerplate
-                .Replace("{{testClass}}", testClassName)
-                .Replace("{{testName}}", testName)
+                .Replace("{{testClassSchemaName}}", testClassSchemaName)
+                .Replace("{{procedureName}}", procedureName)
                 .Replace("{{testCaseBody}}", testCaseBody);
 
             using (var command = new SqlCommand(commandText, connection))

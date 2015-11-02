@@ -22,7 +22,7 @@ namespace Tsqlt
             _bootstrapLock = new object();
         }
 
-        public void RunTest(string testClassName, string testName)
+        public void RunTest(string testClassSchemaName, string testProcedureName)
         {
             lock (_bootstrapLock)
             {
@@ -35,7 +35,7 @@ namespace Tsqlt
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                var fullTestName = $"[{testClassName}].[{testName}]";
+                var fullTestName = $"[{testClassSchemaName}].[{testProcedureName}]";
                 _testExecutor.RunTest(connection, fullTestName);
             }
         }

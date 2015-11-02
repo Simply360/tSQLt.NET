@@ -2,13 +2,13 @@
 {
     public sealed class TsqltTestClass : ITsqltTestClass
     {
-        public string TestClassName { get; }
+        public string TestClassSchemaName { get; }
         public ITsqltTest[] Tests { get; }
-        public string NormalizedTestClassName => TestClassName.Replace(" ", "_").Replace("-", "_");
+        public string NormalizedTestClassName => TestClassSchemaName.Replace(" ", "_").Replace("-", "_");
 
-        public TsqltTestClass(string testClassName, ITsqltTest[] tests)
+        public TsqltTestClass(string testClassSchemaName, ITsqltTest[] tests)
         {
-            TestClassName = testClassName;
+            TestClassSchemaName = testClassSchemaName;
             Tests = tests;
         }
     }
