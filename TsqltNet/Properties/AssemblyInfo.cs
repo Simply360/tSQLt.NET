@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tsqlt")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("tSQLt.NET")]
+[assembly: AssemblyDescription("tSQLt.NET is a framework for managing and running tSQLt database tests from inside .NET unit test projects.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Tsqlt")]
+[assembly: AssemblyCompany("Simply360")]
+[assembly: AssemblyProduct("tSQLt.NET")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
