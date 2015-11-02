@@ -35,7 +35,8 @@ namespace Tsqlt
 
             using (var connection = new SqlConnection(_connectionString))
             {
-                _testExecutor.RunTest(connection, testName);
+                var fullTestName = $"[{testClassName}].[{testName}]";
+                _testExecutor.RunTest(connection, fullTestName);
             }
         }
     }
