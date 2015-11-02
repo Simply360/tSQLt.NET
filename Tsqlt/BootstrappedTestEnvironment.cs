@@ -22,7 +22,7 @@ namespace Tsqlt
             _bootstrapLock = new object();
         }
 
-        public void RunTest(string testName)
+        public void RunTest(string testClassName, string testName)
         {
             lock (_bootstrapLock)
             {
