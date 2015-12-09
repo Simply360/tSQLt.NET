@@ -7,9 +7,7 @@ namespace TsqltNet
     {
         public void RunTest(SqlConnection sqlConnection, string testName)
         {
-            var sql = GetTestExecutionCommandSql(testName);
-
-            using (var sqlCommand = new SqlCommand(sql, sqlConnection))
+            using (var sqlCommand = CreateCommand(testName, sqlConnection))
             {
                 if (sqlConnection.State != ConnectionState.Open)
                     sqlConnection.Open();
@@ -17,9 +15,15 @@ namespace TsqltNet
             }
         }
 
-        protected virtual string GetTestExecutionCommandSql(string testName)
+        protected virtual SqlCommand CreateCommand(string testName, SqlConnection sqlConnection)
         {
-            return $"exec tSQLt.Run '{testName}'";
+            const string sql = "exec tSQLt.Run @TestName";
+            var command = new SqlCommand(sql, sqlConnection);
+
+            var param = new SqlParameter("TestName", SqlDbType.NVarChar) {Value = testName};
+            command.Parameters.Add(param);
+
+            return command;
         }
     }
 }
