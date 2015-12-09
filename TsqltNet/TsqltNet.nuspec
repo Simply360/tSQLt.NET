@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Simply360/tSQLt.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Test stored procedures now work if the file they were generated from contains a single quote.</releaseNotes>
+    <releaseNotes>Change SqlTestExecutor to use a command parameter to specify the test name.</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags></tags>
   </metadata>
