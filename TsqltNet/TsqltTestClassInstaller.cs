@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace TsqltNet
@@ -46,15 +47,22 @@ namespace TsqltNet
 
         protected virtual void CreateTest(string testClassSchemaName, string procedureName, string testCaseBody, SqlConnection connection)
         {
+            Debug.WriteLine($"Installing test {testClassSchemaName}.{procedureName}");
+            Debug.WriteLine("-----");
             var commandText = TestCaseBoilerplate
                 .Replace("{{testClassSchemaName}}", testClassSchemaName)
                 .Replace("{{procedureName}}", procedureName)
+                .Replace("{{escapedTestClassSchemaName}}", testClassSchemaName.Replace("'", "''"))
+                .Replace("{{escapedProcedureName}}", procedureName.Replace("'", "''"))
                 .Replace("{{testCaseBody}}", testCaseBody);
+            Debug.WriteLine(commandText);
 
             using (var command = new SqlCommand(commandText, connection))
             {
                 command.ExecuteNonQuery();
             }
+            Debug.WriteLine("-----");
+            Debug.WriteLine($"Successfully installed test {testClassSchemaName}.{procedureName}");
         }
 
         private string TestCaseBoilerplate =>
