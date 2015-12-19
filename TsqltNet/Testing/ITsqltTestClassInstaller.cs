@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace TsqltNet
+namespace TsqltNet.Testing
 {
     public interface ITsqltTestClassInstaller
     {

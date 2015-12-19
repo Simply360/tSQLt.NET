@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace TsqltNet
+namespace TsqltNet.Testing
 {
     public class AssemblyResourceTestClassDiscoverer : ITestClassDiscoverer
     {

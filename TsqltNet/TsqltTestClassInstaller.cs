@@ -1,7 +1,7 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Reflection;
+using TsqltNet.Testing;
 
 namespace TsqltNet
 {

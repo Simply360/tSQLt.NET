@@ -8,7 +8,7 @@
         /// <summary>
         /// Bootstraps the environment using the given SQL connection
         /// </summary>
-        /// <param name="connectionString"></param>
-        void BootstrapEnvironment(string connectionString);
+        /// <returns>A connection string for the test database</returns>
+        string BootstrapEnvironment();
     }
 }

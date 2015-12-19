@@ -1,43 +1,37 @@
 ﻿using System;
-using System.Data.SqlClient;
 
 namespace TsqltNet
 {
     public class BootstrappedTestEnvironment : ITestEnvironment
     {
-        private readonly string _connectionString;
-        private readonly ISqlTestExecutor _testExecutor;
         private readonly ITestEnvironmentBootstrapper _bootstrapper;
+        private readonly Func<string, ITestRunner> _testRunnerFactory;
         private readonly object _bootstrapLock;
         private bool IsBootstrapped { get; set; }
+        private string TestDbConnectionString { get; set; }
 
-        public BootstrappedTestEnvironment(string connectionString, ITestEnvironmentBootstrapper bootstrapper, ISqlTestExecutor testExecutor)
+        public BootstrappedTestEnvironment(ITestEnvironmentBootstrapper bootstrapper,
+            Func<string, ITestRunner> testRunnerFactory)
         {
-            if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
             if (bootstrapper == null) throw new ArgumentNullException(nameof(bootstrapper));
-            if (testExecutor == null) throw new ArgumentNullException(nameof(testExecutor));
-            _connectionString = connectionString;
-            _testExecutor = testExecutor;
+            if (testRunnerFactory == null) throw new ArgumentNullException(nameof(testRunnerFactory));
             _bootstrapper = bootstrapper;
+            _testRunnerFactory = testRunnerFactory;
             _bootstrapLock = new object();
         }
 
-        public void RunTest(string testClassSchemaName, string testProcedureName)
+        public ITestRunner GetTestRunner()
         {
             lock (_bootstrapLock)
             {
                 if (!IsBootstrapped)
                 {
-                    _bootstrapper.BootstrapEnvironment(_connectionString);
+                    TestDbConnectionString = _bootstrapper.BootstrapEnvironment();
                     IsBootstrapped = true;
                 }
             }
 
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                var fullTestName = $"[{testClassSchemaName}].[{testProcedureName}]";
-                _testExecutor.RunTest(connection, fullTestName);
-            }
+            return _testRunnerFactory(TestDbConnectionString);
         }
     }
 }

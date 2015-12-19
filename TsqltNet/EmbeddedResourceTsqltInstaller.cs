@@ -16,21 +16,16 @@ namespace TsqltNet
             _sqlBatchExtractor = sqlBatchExtractor;
         }
 
-        public void Install(string connectionString)
+        public void Install(SqlConnection connection)
         {
             var tsqltInstallationContents = _embeddedTextResourceReader.GetResourceContents(Assembly.GetExecutingAssembly(), TsqltInstallationResourcePath);
             var batches = _sqlBatchExtractor.ExtractBatches(tsqltInstallationContents);
 
-            using (var connection = new SqlConnection(connectionString))
+            foreach (var batch in batches)
             {
-                connection.Open();
-
-                foreach (var batch in batches)
+                using (var cmd = new SqlCommand(batch, connection))
                 {
-                    using (var cmd = new SqlCommand(batch, connection))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

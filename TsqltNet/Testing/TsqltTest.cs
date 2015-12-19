@@ -1,13 +1,14 @@
 ﻿using System;
 
-namespace TsqltNet
+namespace TsqltNet.Testing
 {
-    public sealed class TsqltTestClass : ITsqltTestClass
+    public class TsqltTest : ITsqltTest
     {
-        public string TestClassSchemaName { get; }
-        public ITsqltTest[] Tests { get; }
+        public string Name { get; }
+        public string ProcedureName => $"test {Name}";
+        public string TestCaseBody { get; }
 
-        public string NormalizedTestClassName => IdentifierFormatter.FormatString(TestClassSchemaName);
+        public string NormalizedTestMethodName => IdentifierFormatter.FormatString(Name);
 
         private IIdentifierFormatter _identifierFormatter;
 
@@ -21,10 +22,10 @@ namespace TsqltNet
             }
         }
 
-        public TsqltTestClass(string testClassSchemaName, ITsqltTest[] tests)
+        public TsqltTest(string name, string testCaseBody)
         {
-            TestClassSchemaName = testClassSchemaName;
-            Tests = tests;
+            Name = name;
+            TestCaseBody = testCaseBody;
         }
     }
 }

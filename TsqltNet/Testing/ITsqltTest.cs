@@ -1,4 +1,4 @@
-﻿namespace TsqltNet
+﻿namespace TsqltNet.Testing
 {
     public interface ITsqltTest
     {

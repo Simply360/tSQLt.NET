@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TsqltNet.Testing;
 
 namespace TsqltNet.Tests
 {

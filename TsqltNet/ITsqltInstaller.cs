@@ -1,7 +1,9 @@
-﻿namespace TsqltNet
+﻿using System.Data.SqlClient;
+
+namespace TsqltNet
 {
     public interface ITsqltInstaller
     {
-        void Install(string connectionString);
+        void Install(SqlConnection connection);
     }
 }

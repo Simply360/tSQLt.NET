@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace TsqltNet
+namespace TsqltNet.Testing
 {
     public class IdentifierFormatter : IIdentifierFormatter
     {
