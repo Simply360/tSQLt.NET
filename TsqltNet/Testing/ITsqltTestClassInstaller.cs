@@ -4,6 +4,6 @@ namespace TsqltNet.Testing
 {
     public interface ITsqltTestClassInstaller
     {
-        void Install(ITsqltTestClass testClass, SqlConnection connection);
+        IInstalledTestClass Install(ITsqltTestClass testClass, SqlConnection connection);
     }
 }

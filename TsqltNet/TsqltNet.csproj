@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInstalledTest.cs" />
+    <Compile Include="IInstalledTestClass.cs" />
+    <Compile Include="InstalledTest.cs" />
+    <Compile Include="InstalledTestClass.cs" />
+    <Compile Include="ITestInstaller.cs" />
     <Compile Include="SqlUtils\DatabaseDropper.cs" />
     <Compile Include="SqlUtils\IDatabaseDropper.cs" />
     <Compile Include="SqlUtils\ISqlCommandExecutor.cs" />
@@ -55,7 +60,6 @@
     <Compile Include="ITestDatabaseInstaller.cs" />
     <Compile Include="ITestEnvironmentDisposer.cs" />
     <Compile Include="ITestRunner.cs" />
-    <Compile Include="SqlConnectionStringTestRunner.cs" />
     <Compile Include="SqlTestRunner.cs" />
     <Compile Include="ConsoleTestOutputMessageWriter.cs" />
     <Compile Include="Testing\IdentifierFormatter.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="TestEnvironmentFactory.cs" />
     <Compile Include="Testing\TsqltTest.cs" />
     <Compile Include="Testing\TsqltTestClass.cs" />
+    <Compile Include="TestInstaller.cs" />
     <Compile Include="TsqltTestClassInstaller.cs" />
   </ItemGroup>
   <ItemGroup>

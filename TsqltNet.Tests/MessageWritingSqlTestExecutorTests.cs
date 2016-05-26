@@ -16,10 +16,12 @@ namespace TsqltNet.Tests
             var sqlConnection = new SqlConnection();
             var innerExecutor = new Mock<ISqlTestExecutor>(MockBehavior.Strict);
             var testOutputMessageWriter = new Mock<ITestOutputMessageWriter>(MockBehavior.Strict);
+            var installedTest = new Mock<IInstalledTest>(MockBehavior.Strict);
+            installedTest.Setup(t => t.FullTestName).Returns(testName);
             var sut = new MessageWritingSqlTestExecutor(testOutputMessageWriter.Object, innerExecutor.Object);
 
             // Act
-            sut.RunTest(sqlConnection, testName);
+            sut.RunTest(sqlConnection, installedTest.Object);
 
             // Assert
             Assert.Fail(); // TODO

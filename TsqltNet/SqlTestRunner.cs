@@ -6,12 +6,15 @@ namespace TsqltNet
     public class SqlTestRunner : ITestRunner
     {
         private readonly ISqlTestExecutor _testExecutor;
+        private readonly ITestInstaller _testInstaller;
         private readonly string _connectionString;
 
-        public SqlTestRunner(ISqlTestExecutor testExecutor, string connectionString)
+        public SqlTestRunner(ISqlTestExecutor testExecutor, ITestInstaller testInstaller, string connectionString)
         {
             if (testExecutor == null) throw new ArgumentNullException(nameof(testExecutor));
+            if (testInstaller == null) throw new ArgumentNullException(nameof(testInstaller));
             _testExecutor = testExecutor;
+            _testInstaller = testInstaller;
             _connectionString = connectionString;
         }
 
@@ -19,8 +22,8 @@ namespace TsqltNet
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var fullTestName = $"[{testClassSchemaName}].[{testProcedureName}]";
-                _testExecutor.RunTest(connection, fullTestName);
+                var installedTest = _testInstaller.InstallTest(testClassSchemaName, testProcedureName, connection);
+                _testExecutor.RunTest(connection, installedTest);
             }
         }
     }

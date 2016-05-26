@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TsqltNet.Testing
 {
@@ -21,10 +23,23 @@ namespace TsqltNet.Testing
             }
         }
 
+        private readonly Lazy<IDictionary<string, ITsqltTest>> _testDict;
+
         public TsqltTestClass(string testClassSchemaName, ITsqltTest[] tests)
         {
             TestClassSchemaName = testClassSchemaName;
             Tests = tests;
+
+            _testDict = new Lazy<IDictionary<string, ITsqltTest>>(() =>
+            {
+                return tests.ToDictionary(t => t.ProcedureName);
+            });
+        }
+
+        public ITsqltTest GetTestByProcedureName(string testProcedureName)
+        {
+            ITsqltTest test;
+            return _testDict.Value.TryGetValue(testProcedureName, out test) ? test : null;
         }
     }
 }

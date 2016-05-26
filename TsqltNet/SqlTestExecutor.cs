@@ -5,9 +5,9 @@ namespace TsqltNet
 {
     public class SqlTestExecutor : ISqlTestExecutor
     {
-        public void RunTest(SqlConnection sqlConnection, string testName)
+        public void RunTest(SqlConnection sqlConnection, IInstalledTest installedTest)
         {
-            using (var sqlCommand = CreateCommand(testName, sqlConnection))
+            using (var sqlCommand = CreateCommand(installedTest.FullTestName, sqlConnection))
             {
                 if (sqlConnection.State != ConnectionState.Open)
                     sqlConnection.Open();

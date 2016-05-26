@@ -19,7 +19,7 @@ namespace TsqltNet.Tests
             // Act
             Action action = () =>
             {
-                sut.RunTest(sqlConnectionWrapper, "foo.bar");
+                sut.RunTest(sqlConnectionWrapper, new InstalledTest("foo.bar"));
             };
             
             // Assert

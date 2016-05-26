@@ -13,7 +13,7 @@ namespace TsqltNet
             _innerExecutor = innerExecutor;
         }
 
-        public void RunTest(SqlConnection sqlConnection, string testName)
+        public void RunTest(SqlConnection sqlConnection, IInstalledTest installedTest)
         {
             SqlInfoMessageEventHandler onInfoMessage = (sender, e) =>
             {
@@ -23,7 +23,7 @@ namespace TsqltNet
 
             try
             {
-                _innerExecutor.RunTest(sqlConnection, testName);
+                _innerExecutor.RunTest(sqlConnection, installedTest);
             }
             finally
             {

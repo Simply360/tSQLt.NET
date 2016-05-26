@@ -10,5 +10,7 @@
         string NormalizedTestClassName { get; }
 
         ITsqltTest[] Tests { get; }
+
+        ITsqltTest GetTestByProcedureName(string testProcedureName);
     }
 }
