@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/Simply360/tSQLt.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Tsqlt.NET now manages its own test database using SqlLocalDb.</releaseNotes>
-    <copyright>Copyright 2015</copyright>
+    <releaseNotes>Test installation has moved from SqlLocalDbTestEnvironmentBootstrapper to SqlTestRunner, to enable granular test installation.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
     <tags></tags>
   </metadata>
 </package>
